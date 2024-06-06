@@ -1,0 +1,37 @@
+@use "./variables" as v;
+
+
+@mixin telefono{
+    @media (max-width:v.$telefono){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (min-width:v.$tablet){
+        @content;
+    }
+}
+
+@mixin laptop{
+    @media (min-width:v.$laptop) {
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media (min-width:v.$desktop){
+        @content;
+    }
+}
+
+@mixin grid($espacio, $colum, $columFr) {
+    display: grid;
+    gap: $espacio;
+    grid-template-columns: repeat(#{$colum}, 1fr);
+}
+
+@mixin gridFr($fraccionUno, $fraccionDos){
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, $fraccionUno)) minmax(0, $fraccionDos);
+}

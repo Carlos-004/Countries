@@ -1,0 +1,30 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.formulario{
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include m.telefono{
+        flex-direction: column;
+        #buscar-country{
+            margin-bottom: 20px;
+        }
+    }
+
+    #buscar-country{
+        padding: 15px;
+        border-radius: 8px;
+        border: solid 1px v.$gris ;
+        width: 350px;
+    }
+
+    #region{
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+        border: solid 1px v.$gris ;
+    }
+}
